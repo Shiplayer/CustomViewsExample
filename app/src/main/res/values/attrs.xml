@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ElementCustomView">
+        <attr name="src" format="integer" />
+        <attr name="text" format="string" />
+        <attr name="open" format="enum">
+            <enum name="camera" value="0"/>
+            <enum name="gallery" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
