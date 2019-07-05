@@ -3,13 +3,22 @@ package com.example.myapplication
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.widget.AdapterView
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.element_custom_view.view.*
 
 
-class ElementCustomView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : FrameLayout(context, attrs, defStyleAttr) {
+class ElementCustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : FrameLayout(context, attrs, defStyleAttr) {
+
+
+    private var action: (View) -> Unit = {}
+
     init {
         val view = View.inflate(context, R.layout.element_custom_view, this)
+        isFocusable = true
+        isClickable = true
+
+        view.setOnClickListener(action)
 
         context.theme.obtainStyledAttributes(
                 attrs,
@@ -25,6 +34,12 @@ class ElementCustomView(context: Context, attrs: AttributeSet?, defStyleAttr: In
         }
     }
 
-    fun setOnClickListener(action: (View) -> Unit){
+    fun setOnItemClickListener(action: (View) -> Unit) {
+        setOnClickListener(action)
     }
+
+    fun setOnItemClickListener(action: View.OnClickListener) {
+        setOnClickListener(action)
+    }
+
 }

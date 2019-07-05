@@ -15,7 +15,7 @@
         tools:text="Simple title" />
 
     <com.example.myapplication.ElementCustomView
-        android:id="@+id/elementCustomView"
+        android:id="@+id/get_photo_from_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -24,6 +24,7 @@
         app:text="@string/app_name" />
 
     <com.example.myapplication.ElementCustomView
+        android:id="@+id/get_photo_from_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
